@@ -1,4 +1,3 @@
-# Memory leak in IopGetDeviceInterfaces
 After few days of debugging my kernel-mode driver to figure out why hooking EFI runtime services function causes leak in paged memory, I noticed weird thing... It happens even without the driver loaded!
 
 To figure out where it comes from, I started by looking which pool tag is being used. Quick look in WinDbg showed me that it's pool tag "Pp" that is constantly gaining size.
